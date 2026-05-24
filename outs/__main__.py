@@ -85,17 +85,17 @@ def sync(ctx):
     with console.status("[bold green]Syncing...") as status:
         if verbose:
             log.info("Syncing Outline client")
-        else: 
+        else:
             console.print("[bold blue]Syncing Outline...")
         outline.sync(SyncType.REMOTE)
         if verbose:
-            log.info("Syncing local Obsidian vault")
+            log.info("Syncing local folder")
         else:
-            console.print("[bold blue]Syncing vault...")
+            console.print("[bold blue]Syncing local folder...")
         outline.sync(SyncType.LOCAL)
     console.print("[bold green]Complete!")
 
-@click.command("delete",help="Delete a document from vault and Outline")
+@click.command("delete",help="Delete a document from local folder and Outline")
 @click.option('-c','--collection',required=True,help="Collection name")
 @click.option('-d','--document',required=False,help="Document name, without '.md' extension")
 @click.option('--all',is_flag=True,show_default=True,default=False,help="Delete entire collection")

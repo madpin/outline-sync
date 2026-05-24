@@ -11,6 +11,7 @@ class RequestType(Enum):
     RETRIEVE_DOCUMENT = "/api/documents.info"
     DELETE_DOCUMENT = "/api/documents.delete"
     UPDATE_DOCUMENT = "/api/documents.update"
+    CREATE_ATTACHMENT = "/api/attachments.create"
 
 class SyncType(Enum):
     LOCAL = "local"
